@@ -1,6 +1,6 @@
 class MoneyController < ApplicationController
   before_action do |controller|
-    if action_name != "find" && action_name != "findClient" 
+    if action_name != "find" && action_name != "findClient" && action_name != "findMoney"
       set_client()
     end
   end
@@ -15,12 +15,22 @@ class MoneyController < ApplicationController
   def show
   end
 
+  # GET money/find/1
+  def findMoney
+    @money = Money.find(params[:num_money])
+    redirect_to([@money.client, @money], notice: 'Money was successfully created.')
+  end
   # GET  /money/find
   def find 
     if user_signed_in?
       @clients = Client.select("id,name").to_json
       @cli = @clients.gsub! "id","value"
       @cli = @clients.gsub! "name","label"
+      if @cli.blank?
+        @error = "Not Client created"    
+      else
+
+      end
     else
       "{}"
     end  

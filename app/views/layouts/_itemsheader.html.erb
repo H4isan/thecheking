@@ -1,25 +1,27 @@
 
-<button class="accordion">Section 1</button>
+<button class="accordion">Clientes</button>
 <div class="panel">
-  <p>Lorem ipsum...</p>
+  <ul>
+    <li><%= link_to "view clients", clients_path %></li>
+    <li><%= link_to "new clients", new_client_path %></li>
+  </ul>
 </div>
 
-<button class="accordion">Section 2</button>
+<button class="accordion">Money</button>
 <div class="panel">
-  <p>Lorem ipsum...</p>
+  <ul>
+    <li><%= link_to "create money", find_money_path %></li>
+    <li>Nr: <input type="text" id="find_money_menu" /><button id="button_find_money_menu" onclick="findMoney($('#find_money_menu').val())" >find</button></li>
+  </ul>
 </div>
 
 <button class="accordion">Section 3</button>
 <div class="panel">
-  <p>Lorem ipsum...</p>
+  <ul>
+    <li></li>
+  </ul>
 </div>
 
-<!--
-<li>
-     <a href="#"><%= link_to "Client", clients_path %></a>
-</li>
-<a href="#"><%= link_to "Money", find_money_path %></a>
--->
 <script>
 var acc = document.getElementsByClassName("accordion");
 var i;
