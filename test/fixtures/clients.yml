@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  number_phones: MyString
+  born_date: 2017-05-05
+  email: MyString
+  picture: MyString
+  huella: MyString
+  zipcode: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  type_cliente: 1
+  banned: 1
+
+two:
+  name: MyString
+  address: MyString
+  number_phones: MyString
+  born_date: 2017-05-05
+  email: MyString
+  picture: MyString
+  huella: MyString
+  zipcode: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  type_cliente: 1
+  banned: 1

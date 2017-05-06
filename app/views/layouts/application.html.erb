@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TheChecking</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body id="content-main">
+    <div class="notificaciones">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+   
+    
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <% if user_signed_in? %>
+      <%= render "layouts/itemsheader" %>
+      <a><%= link_to "Logout", destroy_user_session_path, :method => :delete %></a>
+      <% else %>
+      <a><%= link_to "Sign in",  new_user_session_path%></a>
+      <% end %>
+    </div>
+    <span onclick="openNav()"><i class="material-icons">reorder</i></span>
+    <div class="content-master container">
+      <%= yield %>
+    </div>
+
+  </body>
+</html>

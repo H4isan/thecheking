@@ -1,0 +1,37 @@
+<h1>Listing money</h1>
+
+<table>
+  <tr>
+    <th>Cash number</th>
+    <th>Enterprise name</th>
+    <th>Money</th>
+    <th>Rate</th>
+    <th>Money date</th>
+    <th>Redeemed</th>
+    <th>Comment</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @money.each do |money| %>
+  <tr>
+    <td><%= money.cash_number %></td>
+    <td><%= money.enterprise_name %></td>
+    <td><%= money.money %></td>
+    <td><%= money.rate %></td>
+    <td><%= money.money_date %></td>
+    <td><%= money.redeemed %></td>
+    <td><%= money.comment %></td>
+    <td><%= money.user_id %></td>
+    <td><%= link_to 'Show', [money.client, money] %></td>
+    <td><%= link_to 'Edit', edit_client_money_path(money.client, money) %></td>
+    <td><%= link_to 'Destroy', [money.client, money], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Money', new_client_money_path(params[:client_id]) %>

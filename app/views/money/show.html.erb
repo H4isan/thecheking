@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cash number:</b>
+  <%= @money.cash_number %>
+</p>
+
+<p>
+  <b>Enterprise name:</b>
+  <%= @money.enterprise_name %>
+</p>
+
+<p>
+  <b>Money:</b>
+  <%= @money.money %>
+</p>
+
+<p>
+  <b>Rate:</b>
+  <%= @money.rate %>
+</p>
+
+<p>
+  <b>Money date:</b>
+  <%= @money.money_date %>
+</p>
+
+<p>
+  <b>Redeemed:</b>
+  <%= @money.redeemed %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @money.comment %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @money.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_client_money_path(@money.client, @money) %> |
+<%= link_to 'Back', client_money_index_path(@money.client) %>

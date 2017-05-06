@@ -1,0 +1,45 @@
+<%= form_for([@money.client, @money]) do |f| %>
+  <% if @money.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@money.errors.count, "error") %> prohibited this money from being saved:</h2>
+
+      <ul>
+      <% @money.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cash_number %><br />
+    <%= f.text_field :cash_number %>
+  </div>
+  <div class="field">
+    <%= f.label :enterprise_name %><br />
+    <%= f.text_field :enterprise_name %>
+  </div>
+  <div class="field">
+    <%= f.label :money %><br />
+    <%= f.text_field :money %>
+  </div>
+  <div class="field">
+    <%= f.label :rate %><br />
+    <%= f.text_field :rate %>
+  </div>
+  <div class="field">
+    <%= f.label :money_date %><br />
+    <%= f.date_select :money_date %>
+  </div>
+  <div class="field">
+    <%= f.label :redeemed %><br />
+    <%= f.check_box :redeemed %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br />
+    <%= f.text_field :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
