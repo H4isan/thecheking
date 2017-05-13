@@ -7,27 +7,36 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body id="content-main">
-    <div class="notificaciones">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </div>
-   
     
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <% if user_signed_in? %>
         <%= render "layouts/itemsheader" %>
-        <a><%= link_to "Logout", destroy_user_session_path, :method => :delete %></a>
+        <a><%= link_to "Logout", destroy_user_session_path, :method => :delete,:class => 'blue-text text-darken-2 ' %></a>
       <% else %>
         <a><%= link_to "Sign in",  new_user_session_path%></a>
       <% end %>
     </div>
-    <div class="content-master container">
+        <div class="content-master container">
       <span id="button-menu" onclick="openNav()"><i class="material-icons">menu</i></span>
       <%= yield %>
     </div>
+    
+  <body id="content-main">
+  <div class="row">
+      <div class="col s12">
+        <div class="  notificaciones">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+      </div>
+    </div>
+
+   
+
+
 
   </body>
+  <div class="overlay" id="overlay">
+  </div>
 </html>
