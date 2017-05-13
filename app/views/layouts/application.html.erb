@@ -17,10 +17,7 @@
         <a><%= link_to "Sign in",  new_user_session_path%></a>
       <% end %>
     </div>
-        <div class="content-master container">
-      <span id="button-menu" onclick="openNav()"><i class="material-icons">menu</i></span>
-      <%= yield %>
-    </div>
+
     
   <body id="content-main">
   <div class="row">
@@ -30,6 +27,10 @@
           <p class="alert"><%= alert %></p>
         </div>
       </div>
+    </div>
+    <div class="content-master container">
+      <span id="button-menu" onclick="openNav()"><i class="material-icons">menu</i></span>
+      <%= yield %>
     </div>
 
    
