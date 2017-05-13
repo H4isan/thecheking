@@ -1,0 +1,14 @@
+<h2>Welcome to The Checking</h2>
+<h3>this is software in production. it find upgrade the hand of the banck check</h3>
+<h5>Total checks : <%= @checks.size %></h5>
+    <ul>
+        <li>
+            <h6>Checks < 1000 : <%= @checks.select{ |s|  s.money < 1000 }.size %> </h6>
+        </li>
+        <li>
+            <h6>Checks > 1000 and < 3000 : <%= @checks.select{ |s|  s.money >= 1000 and s.money < 3000 }.size %> </h6>
+        </li>
+        <li>
+            <h6>Checks > 3000 : <span style="color:brown"><%= @checks.select{ |s|  s.money > 3000 }.size %></span></h6>
+        </li>
+    </ul>
