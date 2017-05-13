@@ -1,0 +1,31 @@
+<h1>Listing indetifications</h1>
+
+<table>
+  <tr>
+    <th>Id number</th>
+    <th>Expiration date</th>
+    <th>Id type</th>
+    <th>Expedition date</th>
+    <th>Expedition country</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @indetifications.each do |indetification| %>
+  <tr>
+    <td><%= indetification.id_number %></td>
+    <td><%= indetification.expiration_date %></td>
+    <td><%= indetification.id_type %></td>
+    <td><%= indetification.expedition_date %></td>
+    <td><%= indetification.expedition_country %></td>
+    <td><%= link_to 'Show', [indetification.client, indetification] %></td>
+    <td><%= link_to 'Edit', edit_client_indetification_path(indetification.client, indetification) %></td>
+    <td><%= link_to 'Destroy', [indetification.client, indetification], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Indetification', new_client_indetification_path(params[:client_id]) %>

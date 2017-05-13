@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client: one
+  id_number: MyString
+  expiration_date: 2017-05-13
+  id_type: MyString
+  expedition_date: 2017-05-13
+  expedition_country: 2017-05-13
+
+two:
+  client: two
+  id_number: MyString
+  expiration_date: 2017-05-13
+  id_type: MyString
+  expedition_date: 2017-05-13
+  expedition_country: 2017-05-13

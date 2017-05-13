@@ -1,0 +1,37 @@
+<%= form_for([@indetification.client, @indetification]) do |f| %>
+  <% if @indetification.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@indetification.errors.count, "error") %> prohibited this indetification from being saved:</h2>
+
+      <ul>
+      <% @indetification.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_number %><br />
+    <%= f.text_field :id_number %>
+  </div>
+  <div class="field">
+    <%= f.label :expiration_date %><br />
+    <%= f.date_select :expiration_date %>
+  </div>
+  <div class="field">
+    <%= f.label :id_type %><br />
+    <%= f.text_field :id_type %>
+  </div>
+  <div class="field">
+    <%= f.label :expedition_date %><br />
+    <%= f.date_select :expedition_date %>
+  </div>
+  <div class="field">
+    <%= f.label :expedition_country %><br />
+    <%= f.date_select :expedition_country %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

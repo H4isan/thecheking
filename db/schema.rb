@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170506013420) do
+ActiveRecord::Schema.define(version: 20170513155940) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +28,18 @@ ActiveRecord::Schema.define(version: 20170506013420) do
     t.integer  "banned"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "indetifications", force: :cascade do |t|
+    t.integer  "client_id"
+    t.string   "id_number"
+    t.date     "expiration_date"
+    t.string   "id_type"
+    t.date     "expedition_date"
+    t.date     "expedition_country"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["client_id"], name: "index_indetifications_on_client_id"
   end
 
   create_table "money", force: :cascade do |t|

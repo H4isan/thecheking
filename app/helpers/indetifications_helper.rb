@@ -1,0 +1,2 @@
+module IndetificationsHelper
+end

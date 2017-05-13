@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id number:</b>
+  <%= @indetification.id_number %>
+</p>
+
+<p>
+  <b>Expiration date:</b>
+  <%= @indetification.expiration_date %>
+</p>
+
+<p>
+  <b>Id type:</b>
+  <%= @indetification.id_type %>
+</p>
+
+<p>
+  <b>Expedition date:</b>
+  <%= @indetification.expedition_date %>
+</p>
+
+<p>
+  <b>Expedition country:</b>
+  <%= @indetification.expedition_country %>
+</p>
+
+
+<%= link_to 'Edit', edit_client_indetification_path(@indetification.client, @indetification) %> |
+<%= link_to 'Back', client_indetifications_path(@indetification.client) %>

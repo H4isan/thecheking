@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :clients do
+    resources :indetifications
+  end
+  resources :clients do
     resources :money
   end
   get '/money/find', to: 'money#find', as: 'find_money'
